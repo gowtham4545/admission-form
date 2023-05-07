@@ -23,16 +23,16 @@ const Index = () => {
     const [progress, setProgress] = useState(0);
     const [position, setPosition] = useState('sticky');
 
-    const navigate=useNavigate();
+    const navigate = useNavigate();
 
     function nextPage() {
-        if(progress===100){
+        if (progress === 100) {
             redirect(`review`)
             navigate(`./review?p1t1=${p1t1}&p1t2=${p1t2}&p1t3=${p1t3}&p1t4=${p1t4}&p1t5=${p1t5}&p1r1=${p1r1}&p1r2=${p1r2}&p2t1=${p2t2}&p2t3=${p2t3}&p2t4=${p2t4}&p2t5=${p2t5}&p2r1=${p2r1}&p2r2=${p2r2}&p3slt=${p3slt}&p3ch=${p3ch}`)
         }
-        else if (page===1 && progress === (7 / 16 * 100))
+        else if (page === 1 && progress === (7 / 16 * 100))
             setPage(page + 1);
-        else if (page===2 && progress === (14 / 16 * 100))
+        else if (page === 2 && progress === (14 / 16 * 100))
             setPage(page + 1);
         else if (page === 3 && p3ch !== 'Yes')
             alert('Please agree to the conditions');
@@ -60,7 +60,7 @@ const Index = () => {
         count += (p3slt ? 1 : 0);
         count += (p3ch ? 1 : 0);
         setProgress(count / 16 * 100);
-        if(page===3)setPosition('absolute');
+        if (page === 3) setPosition('absolute');
         else setPosition('sticky');
     }
 
@@ -94,17 +94,25 @@ const Index = () => {
                                 <div className='label'>{item1[4]}</div>
                                 <input className='t' type='' onChange={(e) => setp1t5(e.target.value)} required />
                             </div>
-                            <div className='input'>
-                                <input className='r' id='p1r1c1' type='radio' onChange={(e) => setp1r1(e.target.value)} name='p1r1' value={item1[5][0]} required />
-                                <label htmlFor='p1r1c1' className='label'>{item1[5][0]}</label>
-                                <input className='r' id='p1r1c2' type='radio' onChange={(e) => setp1r1(e.target.value)} name='p1r1' value={item1[5][1]} required />
-                                <label htmlFor='p1r1c2' className='label'>{item1[5][1]}</label>
+                            <div className='input rr'>
+                                <div className='radio'>
+                                    <input className='r' id='p1r1c1' type='radio' onChange={(e) => setp1r1(e.target.value)} name='p1r1' value={item1[5][0]} required />
+                                    <label htmlFor='p1r1c1' className='label'>{item1[5][0]}</label>
+                                </div>
+                                <div className='radio'>
+                                    <input className='r' id='p1r1c2' type='radio' onChange={(e) => setp1r1(e.target.value)} name='p1r1' value={item1[5][1]} required />
+                                    <label htmlFor='p1r1c2' className='label'>{item1[5][1]}</label>
+                                </div>
                             </div>
-                            <div className='input'>
-                                <input className='r' id='p1r2c1' type='radio' onChange={(e) => setp1r2(e.target.value)} name='p1r2' value={item1[6][0]} required />
-                                <label htmlFor='p1r2c1' className='label'>{item1[6][0]}</label>
-                                <input className='r' id='p1r2c2' type='radio' onChange={(e) => setp1r2(e.target.value)} name='p1r2' value={item1[6][1]} required />
-                                <label htmlFor='p1r2c2' className='label'>{item1[6][1]}</label>
+                            <div className='input rr'>
+                                <div className='radio'>
+                                    <input className='r' id='p1r2c1' type='radio' onChange={(e) => setp1r2(e.target.value)} name='p1r2' value={item1[6][0]} required />
+                                    <label htmlFor='p1r2c1' className='label'>{item1[6][0]}</label>
+                                </div>
+                                <div className='radio'>
+                                    <input className='r' id='p1r2c2' type='radio' onChange={(e) => setp1r2(e.target.value)} name='p1r2' value={item1[6][1]} required />
+                                    <label htmlFor='p1r2c2' className='label'>{item1[6][1]}</label>
+                                </div>
                             </div>
                             <div className='input'>
                                 <div className='label'>Photo</div>
@@ -140,17 +148,25 @@ const Index = () => {
                                 <div className='label'>{item2[4]}</div>
                                 <input className='t' type='' onChange={(e) => setp2t5(e.target.value)} required />
                             </div>
-                            <div className='input'>
-                                <input className='r' type='radio' onChange={(e) => setp2r1(e.target.value)} name='p1r1' value={item2[5][0]} required />
-                                <div className='label'>{item2[5][0]}</div>
-                                <input className='r' type='radio' onChange={(e) => setp2r1(e.target.value)} name='p1r1' value={item2[5][1]} required />
-                                <div className='label'>{item2[5][1]}</div>
+                            <div className='input rr'>
+                                <div className='radio'>
+                                    <input className='r' id='p2r1c1' type='radio' onChange={(e) => setp2r1(e.target.value)} name='p1r1' value={item2[5][0]} required />
+                                    <label htmlFor='p2r1c1' className='label'>{item2[5][0]}</label>
+                                </div>
+                                <div className='radio'>
+                                    <input className='r' id='p2r1c2' type='radio' onChange={(e) => setp2r1(e.target.value)} name='p1r1' value={item2[5][1]} required />
+                                    <label htmlFor='p2r1c2' className='label'>{item2[5][1]}</label>
+                                </div>
                             </div>
-                            <div className='input'>
-                                <input className='r' type='radio' onChange={(e) => setp2r2(e.target.value)} name='p1r2' value={item2[6][0]} required />
-                                <div className='label'>{item2[6][0]}</div>
-                                <input className='r' type='radio' onChange={(e) => setp2r2(e.target.value)} name='p1r2' value={item2[6][1]} required />
-                                <div className='label'>{item2[6][1]}</div>
+                            <div className='input rr'>
+                                <div className='radio'>
+                                    <input className='r' id='p2r2c1' type='radio' onChange={(e) => setp2r2(e.target.value)} name='p1r2' value={item2[6][0]} required />
+                                    <label htmlFor='p2r2c1' className='label'>{item2[6][0]}</label>
+                                </div>
+                                <div className='radio'>
+                                    <input className='r' id='p2r2c2' type='radio' onChange={(e) => setp2r2(e.target.value)} name='p1r2' value={item2[6][1]} required />
+                                    <label htmlFor='p2r2c2' className='label'>{item2[6][1]}</label>
+                                </div>
                             </div>
                             <div className='input'>
                                 <div className='label'>Marks Card</div>
@@ -164,23 +180,23 @@ const Index = () => {
             case 3:
                 return <>
                     <div className='page'>
-                        <h2>Admission</h2> 
+                        <h2>Admission</h2>
                         <div className='input'>
                             <div className='label'>Course</div>
                             <select className='f' type='' onLoad={(e) => setp3slt(e.target.value)} onClick={(e) => setp3slt(e.target.value)} required >
-                                <option value='B.Tech'  onClick={(e) => setp3slt(e.target.value)}>Select One</option>
+                                <option value='B.Tech' onClick={(e) => setp3slt(e.target.value)}>Select One</option>
                                 <option value='B.Tech' defaultChecked onClick={(e) => setp3slt(e.target.value)}>B.Tech</option>
                                 <option value='B.Arch' onClick={(e) => setp3slt(e.target.value)}>B.Arch</option>
                                 <option value='B.Sc' onClick={(e) => setp3slt(e.target.value)}>B.Sc</option>
                                 <option value='B.Com' onClick={(e) => setp3slt(e.target.value)}>B.Com</option>
                             </select>
                         </div>
-                        <div className='input'>
-                            <input className='f' type='checkbox' onChange={(e) => setp3ch(e.target.value)} value={'Yes'} required />
-                            <div className='info'>By clicking this, You agree to all the terms and conditions of the college.</div>
+                        <div className='info'>
+                            <input id='p3ch' className='f' type='checkbox' onChange={(e) => setp3ch(e.target.value)} value={'Yes'} required />
+                            <label htmlFor='p3ch' className=''>By clicking this, You agree to all the terms and conditions of the college.</label>
                         </div>
                     </div>
-                    <input className='submit' style={{color:'black'}} type='submit' onClick={nextPage} value={'Submit'}/>
+                    <input className='submit' style={{ color: 'black' }} type='submit' onClick={nextPage} value={'Submit'} />
                 </>
 
             default:
@@ -196,7 +212,7 @@ const Index = () => {
             {
                 renderSwitch(page)
             }
-            <div className='progress' style={{ width: `${progress}vw`,position: position}}></div>
+            <div className='progress' style={{ width: `${progress}vw`, position: position }}></div>
         </div>
     )
 }

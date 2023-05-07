@@ -72,10 +72,42 @@
     animation-delay: 0;
 }
 
+.radio{
+    display: flex;
+    flex-direction: row;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.rr{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
 @media screen and (max-width:1200px){
     .page{
         width: 90vw;
         flex-wrap: wrap;
+    }
+    .t{
+        width: 75vw;
+    }
+    .radio{
+        display: flex;
+        flex-direction: row;
+    }
+    .rr{
+        display: flex;
+        width: 75vw;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        flex-direction: row;
     }
 }
 
