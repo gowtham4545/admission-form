@@ -21,6 +21,7 @@ const Index = () => {
     const [p3slt, setp3slt] = useState();
     const [p3ch, setp3ch] = useState();
     const [progress, setProgress] = useState(0);
+    const [position, setPosition] = useState('sticky');
 
     const navigate=useNavigate();
 
@@ -29,9 +30,9 @@ const Index = () => {
             redirect(`review`)
             navigate(`./review?p1t1=${p1t1}&p1t2=${p1t2}&p1t3=${p1t3}&p1t4=${p1t4}&p1t5=${p1t5}&p1r1=${p1r1}&p1r2=${p1r2}&p2t1=${p2t2}&p2t3=${p2t3}&p2t4=${p2t4}&p2t5=${p2t5}&p2r1=${p2r1}&p2r2=${p2r2}&p3slt=${p3slt}&p3ch=${p3ch}`)
         }
-        else if (progress === (7 / 16 * 100))
+        else if (page===1 && progress === (7 / 16 * 100))
             setPage(page + 1);
-        else if (progress === (14 / 16 * 100))
+        else if (page===2 && progress === (14 / 16 * 100))
             setPage(page + 1);
         else if (page === 3 && p3ch !== 'Yes')
             alert('Please agree to the conditions');
@@ -59,6 +60,8 @@ const Index = () => {
         count += (p3slt ? 1 : 0);
         count += (p3ch ? 1 : 0);
         setProgress(count / 16 * 100);
+        if(page===3)setPosition('absolute');
+        else setPosition('sticky');
     }
 
     let item1 = ['Name', "Father Name", 'Mother Name', 'City', 'State', ['Male', 'Female'], ['Rural', 'Urban']]
@@ -69,7 +72,7 @@ const Index = () => {
             case 1:
                 return <>
                     <div className='page'>
-                        page 1
+                        <h2>Student Details</h2>
                         <div action={null}>
                             <div className='input'>
                                 <div className='label'>{item1[0]}</div>
@@ -107,7 +110,7 @@ const Index = () => {
                                 <div className='label'>Photo</div>
                                 <input className='f' type='file' required />
                             </div>
-                            <input type='button' onClick={nextPage} value={'Next'} />
+                            <input className='submit' type='button' onClick={nextPage} value={'Next'} />
                         </div>
                     </div>
                 </>
@@ -115,7 +118,7 @@ const Index = () => {
             case 2:
                 return <>
                     <div className='page'>
-                        page 2
+                        <h2>Study Details</h2>
                         <form>
                             <div className='input'>
                                 <div className='label'>{item2[0]}</div>
@@ -153,7 +156,7 @@ const Index = () => {
                                 <div className='label'>Marks Card</div>
                                 <input className='f' type='file' required />
                             </div>
-                            <input type='submit' onClick={nextPage} value={'Next'} />
+                            <input className='submit' type='submit' onClick={nextPage} value={'Next'} />
                         </form>
                     </div>
                 </>
@@ -161,7 +164,7 @@ const Index = () => {
             case 3:
                 return <>
                     <div className='page'>
-                        page 3 
+                        <h2>Admission</h2> 
                         <div className='input'>
                             <div className='label'>Course</div>
                             <select className='f' type='' onLoad={(e) => setp3slt(e.target.value)} onClick={(e) => setp3slt(e.target.value)} required >
@@ -173,11 +176,11 @@ const Index = () => {
                             </select>
                         </div>
                         <div className='input'>
-                            <div className='label'></div>
                             <input className='f' type='checkbox' onChange={(e) => setp3ch(e.target.value)} value={'Yes'} required />
+                            <div className='info'>By clicking this, You agree to all the terms and conditions of the college.</div>
                         </div>
                     </div>
-                    <input className='submit' type='submit' onClick={nextPage} value={'Submit'}/>
+                    <input className='submit' style={{color:'black'}} type='submit' onClick={nextPage} value={'Submit'}/>
                 </>
 
             default:
@@ -189,11 +192,11 @@ const Index = () => {
 
     return (
         <div>
-            <h1>Admission Form</h1>
+            <h1 className='heading'>Admission Form</h1>
             {
                 renderSwitch(page)
             }
-            <div className='progress' style={{ width: `${progress}vw` }}></div>
+            <div className='progress' style={{ width: `${progress}vw`,position: position}}></div>
         </div>
     )
 }

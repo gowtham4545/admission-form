@@ -33,76 +33,81 @@ function Index() {
     console.log(arr.length);
     return (
         <div>
-            <h1>Review</h1>
+            <h1 className='heading'>Review</h1>
             <div className='details'>
-                Personal Details
-                {arr[0] ? (<div className='detail'>
-                    <div className='label'>{labels[0]}</div>
-                    <div className='content'>{`${arr[0]}`}</div>
-                </div>) : <></>}
-                {arr[1] ? (<div className='detail'>
-                    <div className='label'>{labels[1]}</div>
-                    <div className='content'>{`${arr[1]}`}</div>
-                </div>) : <></>}
-                {arr[2] ? (<div className='detail'>
-                    <div className='label'>{labels[2]}</div>
-                    <div className='content'>{`${arr[2]}`}</div>
-                </div>) : <></>}
-                {arr[3] ? (<div className='detail'>
-                    <div className='label'>{labels[3]}</div>
-                    <div className='content'>{`${arr[3]}`}</div>
-                </div>) : <></>}
-                {arr[4] ? (<div className='detail'>
-                    <div className='label'>{labels[4]}</div>
-                    <div className='content'>{`${arr[4]}`}</div>
-                </div>) : <></>}
-                {arr[5] ? (<div className='detail'>
-                    <div className='label'>{labels[5]}</div>
-                    <div className='content'>{`${arr[5]}`}</div>
-                </div>) : <></>}
-                {arr[6] ? (<div className='detail'>
-                    <div className='label'>{labels[6]}</div>
-                    <div className='content'>{`${arr[6]}`}</div>
-                </div>) : <></>}
-                Study Details
-                {arr[7] ? (<div className='detail'>
-                    <div className='label'>{labels[7]}</div>
-                    <div className='content'>{`${arr[7]}`}</div>
-                </div>) : <></>}
-                {arr[8] ? (<div className='detail'>
-                    <div className='label'>{labels[8]}</div>
-                    <div className='content'>{`${arr[8]}`}</div>
-                </div>) : <></>}
-                {arr[9] ? (<div className='detail'>
-                    <div className='label'>{labels[9]}</div>
-                    <div className='content'>{`${arr[9]}`}</div>
-                </div>) : <></>}
-                {arr[10] ? (<div className='detail'>
-                    <div className='label'>{labels[10]}</div>
-                    <div className='content'>{`${arr[10]}`}</div>
-                </div>) : <></>}
-                {arr[11] ? (<div className='detail'>
-                    <div className='label'>{labels[11]}</div>
-                    <div className='content'>{`${arr[11]}`}</div>
-                </div>) : <></>}
-                {arr[12] ? (<div className='detail'>
-                    <div className='label'>{labels[12]}</div>
-                    <div className='content'>{`${arr[12]}`}</div>
-                </div>) : <></>}
-                {arr[13] ? (<div className='detail'>
-                    <div className='label'>{labels[13]}</div>
-                    <div className='content'>{`${arr[13]}`}</div>
-                </div>) : <></>}
-                Admission
-                {arr[14] ? (<div className='detail'>
-                    <div className='label'>{labels[14]}</div>
-                    <div className='content'>{`${arr[14]}`}</div>
-                </div>) : <></>}
-                {arr[15] ? (<div className='detail'>
-                    <div className='label'>{labels[15]}</div>
-                    <div className='content'>{`${arr[15]}`}</div>
-                </div>) : <></>}
-                
+                <div className='block'>
+                    <h2>Personal Details</h2>
+                    {arr[0] ? (<div className='detail'>
+                        <div className='label'>{labels[0]}</div>
+                        <div className='content'>{`${arr[0]}`}</div>
+                    </div>) : <></>}
+                    {arr[1] ? (<div className='detail'>
+                        <div className='label'>{labels[1]}</div>
+                        <div className='content'>{`${arr[1]}`}</div>
+                    </div>) : <></>}
+                    {arr[2] ? (<div className='detail'>
+                        <div className='label'>{labels[2]}</div>
+                        <div className='content'>{`${arr[2]}`}</div>
+                    </div>) : <></>}
+                    {arr[3] ? (<div className='detail'>
+                        <div className='label'>{labels[3]}</div>
+                        <div className='content'>{`${arr[3]}`}</div>
+                    </div>) : <></>}
+                    {arr[4] ? (<div className='detail'>
+                        <div className='label'>{labels[4]}</div>
+                        <div className='content'>{`${arr[4]}`}</div>
+                    </div>) : <></>}
+                    {arr[5] ? (<div className='detail'>
+                        <div className='label'>{labels[5]}</div>
+                        <div className='content'>{`${arr[5]}`}</div>
+                    </div>) : <></>}
+                    {arr[6] ? (<div className='detail'>
+                        <div className='label'>{labels[6]}</div>
+                        <div className='content'>{`${arr[6]}`}</div>
+                    </div>) : <></>}
+                </div>
+                <div className='block'>
+                    <h2>Study Details</h2>
+                    {arr[7] ? (<div className='detail'>
+                        <div className='label'>{labels[7]}</div>
+                        <div className='content'>{`${arr[7]}`}</div>
+                    </div>) : <></>}
+                    {arr[8] ? (<div className='detail'>
+                        <div className='label'>{labels[8]}</div>
+                        <div className='content'>{`${arr[8]}`}</div>
+                    </div>) : <></>}
+                    {arr[9] ? (<div className='detail'>
+                        <div className='label'>{labels[9]}</div>
+                        <div className='content'>{`${arr[9]}`}</div>
+                    </div>) : <></>}
+                    {arr[10] ? (<div className='detail'>
+                        <div className='label'>{labels[10]}</div>
+                        <div className='content'>{`${arr[10]}`}</div>
+                    </div>) : <></>}
+                    {arr[11] ? (<div className='detail'>
+                        <div className='label'>{labels[11]}</div>
+                        <div className='content'>{`${arr[11]}`}</div>
+                    </div>) : <></>}
+                    {arr[12] ? (<div className='detail'>
+                        <div className='label'>{labels[12]}</div>
+                        <div className='content'>{`${arr[12]}`}</div>
+                    </div>) : <></>}
+                    {arr[13] ? (<div className='detail'>
+                        <div className='label'>{labels[13]}</div>
+                        <div className='content'>{`${arr[13]}`}</div>
+                    </div>) : <></>}
+                </div>
+                <div className='block'>
+                    <h2>Admission</h2>
+                    {arr[14] ? (<div className='detail'>
+                        <div className='label'>{labels[14]}</div>
+                        <div className='content'>{`${arr[14]}`}</div>
+                    </div>) : <></>}
+                    {arr[15] ? (<div className='detail'>
+                        <div className='label'>{labels[15]}</div>
+                        <div className='content'>{`${arr[15]}`}</div>
+                    </div>) : <></>}
+                </div>
             </div>
         </div>
     )
