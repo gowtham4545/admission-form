@@ -1,0 +1,19 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.input{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+.progress{
+    margin: 0;
+    height: 7px;
+    background: rgb(1, 164, 9);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}

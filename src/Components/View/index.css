@@ -1,0 +1,29 @@
+.details{
+    color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.detail{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.label{
+    color: blueviolet;
+    display: flex;
+    width: 100px;
+    margin:10px;
+}
+
+.content{
+    color: rgb(58, 249, 41);
+    display: flex;
+    width: 100px;
+    margin:10px;
+}
+h1{
+    color: black;
+}
