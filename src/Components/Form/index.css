@@ -8,6 +8,10 @@
     border-radius: 10px;
     width: 50vw;
     margin: auto ;
+    animation-name: head;
+    animation-timing-function: ease-in;
+    animation-duration: 3s;
+    animation-delay: 0;
     margin-bottom: 20px;
 }
 
@@ -35,11 +39,18 @@
 
 .t {
     width: 40vw;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid black;
 }
 
-input:active{
-    border-color: #625EF9;
+
+.t:focus{
+    outline: 0;
 }
+
+
+
 .submit{
     background-color: #625EF9;
     color: aliceblue;
@@ -54,11 +65,29 @@ input:active{
 .heading{
     color: #625EF9;
     text-shadow: 2px 2px 2px rgb(161, 150, 217);
+    position: relative;
+    animation-name: head;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+    animation-delay: 0;
 }
 
 @media screen and (max-width:1200px){
     .page{
         width: 90vw;
         flex-wrap: wrap;
+    }
+}
+
+@keyframes head {
+    from{
+        /* transform: translateX(30px); */
+        /* visibility: hidden; */
+        opacity: 0;
+    }
+    to{
+        /* transform: 0; */
+        /* visibility: visible; */
+        opacity: 100%;
     }
 }

@@ -95,16 +95,16 @@ const Index = () => {
                                 <input className='t' type='' onChange={(e) => setp1t5(e.target.value)} required />
                             </div>
                             <div className='input'>
-                                <input className='r' type='radio' onChange={(e) => setp1r1(e.target.value)} name='p1r1' value={item1[5][0]} required />
-                                <div className='label'>{item1[5][0]}</div>
-                                <input className='r' type='radio' onChange={(e) => setp1r1(e.target.value)} name='p1r1' value={item1[5][1]} required />
-                                <div className='label'>{item1[5][1]}</div>
+                                <input className='r' id='p1r1c1' type='radio' onChange={(e) => setp1r1(e.target.value)} name='p1r1' value={item1[5][0]} required />
+                                <label htmlFor='p1r1c1' className='label'>{item1[5][0]}</label>
+                                <input className='r' id='p1r1c2' type='radio' onChange={(e) => setp1r1(e.target.value)} name='p1r1' value={item1[5][1]} required />
+                                <label htmlFor='p1r1c2' className='label'>{item1[5][1]}</label>
                             </div>
                             <div className='input'>
-                                <input className='r' type='radio' onChange={(e) => setp1r2(e.target.value)} name='p1r2' value={item1[6][0]} required />
-                                <div className='label'>{item1[6][0]}</div>
-                                <input className='r' type='radio' onChange={(e) => setp1r2(e.target.value)} name='p1r2' value={item1[6][1]} required />
-                                <div className='label'>{item1[6][1]}</div>
+                                <input className='r' id='p1r2c1' type='radio' onChange={(e) => setp1r2(e.target.value)} name='p1r2' value={item1[6][0]} required />
+                                <label htmlFor='p1r2c1' className='label'>{item1[6][0]}</label>
+                                <input className='r' id='p1r2c2' type='radio' onChange={(e) => setp1r2(e.target.value)} name='p1r2' value={item1[6][1]} required />
+                                <label htmlFor='p1r2c2' className='label'>{item1[6][1]}</label>
                             </div>
                             <div className='input'>
                                 <div className='label'>Photo</div>
