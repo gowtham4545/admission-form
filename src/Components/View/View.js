@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function useQuery() {
     const { search } = useLocation();
@@ -8,28 +9,30 @@ function useQuery() {
     return search;
 }
 
-function Index() {
+function View() {
+    const state = useSelector((state) => state.Reducer)
+    console.log(state);
     const search = useQuery();
-    const params = React.useMemo(() => new URLSearchParams(search), [search]);
-    const p1t1 = params.get('p1t1')
-    const p1t2 = params.get('p1t2')
-    const p1t3 = params.get('p1t3')
-    const p1t4 = params.get('p1t4')
-    const p1t5 = params.get('p1t5')
-    const p2t1 = params.get('p2t1')
-    const p2t2 = params.get('p2t2')
-    const p2t3 = params.get('p2t3')
-    const p2t4 = params.get('p2t4')
-    const p2t5 = params.get('p2t5')
-    const p2r1 = params.get('p2r1')
-    const p2r2 = params.get('p2r2')
-    const p1r1 = params.get('p1r1')
-    const p1r2 = params.get('p1r2')
-    const p3ch = params.get('p3ch')
-    const p3slt = params.get('p3slt')
+    // const params = React.useMemo(() => new URLSearchParams(search), [search]);
+    // const p1t1 = params.get('p1t1')
+    // const p1t2 = params.get('p1t2')
+    // const p1t3 = params.get('p1t3')
+    // const p1t4 = params.get('p1t4')
+    // const p1t5 = params.get('p1t5')
+    // const p2t1 = params.get('p2t1')
+    // const p2t2 = params.get('p2t2')
+    // const p2t3 = params.get('p2t3')
+    // const p2t4 = params.get('p2t4')
+    // const p2t5 = params.get('p2t5')
+    // const p2r1 = params.get('p2r1')
+    // const p2r2 = params.get('p2r2')
+    // const p1r1 = params.get('p1r1')
+    // const p1r2 = params.get('p1r2')
+    // const p3ch = params.get('p3ch')
+    // const p3slt = params.get('p3slt')
 
     const labels = ['Name', "Father Name", 'Mother Name', 'City', 'State', 'Gender', 'Area', 'College Name', 'City', 'State', 'Percentage', 'Grade', 'Syllabus', 'Subjects', 'Course', 'Agree with conditions']
-    const arr = [p1t1, p1t2, p1t3, p1t4, p1t5, p1r1, p1r2, p2t1, p2t2, p2t3, p2t4, p2t5, p2r1, p2r2, p3slt, p3ch]
+    const arr = [state.name, state.fName, state.mName, state.city, state.state, state.gender, state.area, state.cName, state.cCity, state.cState, state.percent, state.grade, state.syllabus, state.subject, state.course, state.agree, state.image]
     console.log(arr.length);
     return (
         <div>
@@ -37,6 +40,9 @@ function Index() {
             <div className='details'>
                 <div className='block'>
                     <h2>Personal Details</h2>
+                    {arr[16]?(
+                        <img className='image' alt={''}/>
+                    ):(<></>)}
                     {arr[0] ? (<div className='detail'>
                         <div className='label'>{labels[0]}</div>
                         <div className='content'>{`${arr[0]}`}</div>
@@ -113,4 +119,4 @@ function Index() {
     )
 }
 
-export default Index;
+export default View;

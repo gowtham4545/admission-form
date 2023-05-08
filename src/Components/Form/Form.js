@@ -1,8 +1,10 @@
 import { redirect, useNavigate } from 'react-router-dom';
 import './index.css';
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { agreeChange, areaChange, cCityChange, cNameChange, cStateChange, cityChange, courseChange, fNameChange, genderChange, gradeChange, mNameChange, nameChange, percentChange, photoChange, stateChange, subjectChange, syllabusChange } from '../../Actions/Index'
 
-const Index = () => {
+const Form = () => {
     const [page, setPage] = useState(1);
     const [p1t1, setp1t1] = useState();
     const [p1t2, setp1t2] = useState();
@@ -28,7 +30,8 @@ const Index = () => {
     function nextPage() {
         if (progress === 100) {
             redirect(`review`)
-            navigate(`./review?p1t1=${p1t1}&p1t2=${p1t2}&p1t3=${p1t3}&p1t4=${p1t4}&p1t5=${p1t5}&p1r1=${p1r1}&p1r2=${p1r2}&p2t1=${p2t2}&p2t3=${p2t3}&p2t4=${p2t4}&p2t5=${p2t5}&p2r1=${p2r1}&p2r2=${p2r2}&p3slt=${p3slt}&p3ch=${p3ch}`)
+            // navigate(`./review?p1t1=${p1t1}&p1t2=${p1t2}&p1t3=${p1t3}&p1t4=${p1t4}&p1t5=${p1t5}&p1r1=${p1r1}&p1r2=${p1r2}&p2t1=${p2t2}&p2t3=${p2t3}&p2t4=${p2t4}&p2t5=${p2t5}&p2r1=${p2r1}&p2r2=${p2r2}&p3slt=${p3slt}&p3ch=${p3ch}`)
+            navigate('/review');
         }
         else if (page === 1 && progress === (7 / 16 * 100))
             setPage(page + 1);
@@ -40,6 +43,8 @@ const Index = () => {
         console.log(page);
         console.log(progress);
     }
+
+    const dispatch=useDispatch();
 
     function Progress() {
         let count = 0;
@@ -62,6 +67,28 @@ const Index = () => {
         setProgress(count / 16 * 100);
         if (page === 3) setPosition('absolute');
         else setPosition('sticky');
+        if(page===1){
+            dispatch(nameChange(p1t1))
+            dispatch(fNameChange(p1t2))
+            dispatch(mNameChange(p1t3))
+            dispatch(cityChange(p1t4))
+            dispatch(stateChange(p1t5))
+            dispatch(genderChange(p1r1))
+            dispatch(areaChange(p1r2))
+        }
+        if(page===2){
+            dispatch(cNameChange(p2t1))
+            dispatch(cCityChange(p2t2))
+            dispatch(cStateChange(p2t3))
+            dispatch(syllabusChange(p2r1))
+            dispatch(subjectChange(p2r2))
+            dispatch(gradeChange(p2t5))
+            dispatch(percentChange(p2t4))
+        }
+        if(page===3){
+            dispatch(courseChange(p3slt))
+            dispatch(agreeChange(p3ch))
+        }
     }
 
     let item1 = ['Name', "Father Name", 'Mother Name', 'City', 'State', ['Male', 'Female'], ['Rural', 'Urban']]
@@ -219,4 +246,4 @@ const Index = () => {
 
 
 
-export default Index;
+export default Form;

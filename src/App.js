@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Form from './Components/Form';
-import View from './Components/View';
+import Form from './Components/Form/Form';
+import View from './Components/View/View';
 
 function App() {
     return (
